@@ -7,6 +7,12 @@ class PoliceClient {
         this.client.on('ready', () => {
             console.log(`Ahora el bot esta conectado como ${this.client.user.tag}`);
         });
+        this.client.on('message', this.onMessage.bind(this));
+    }
+    onMessage(msg) {
+        if (msg.content !== '') {
+            msg.reply(msg.content);
+        }
     }
     login(token) {
         this.client.login(token)

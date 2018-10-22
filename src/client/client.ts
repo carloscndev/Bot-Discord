@@ -9,6 +9,14 @@ class PoliceClient {
     this.client.on('ready', () => {
       console.log(`Ahora el bot esta conectado como ${this.client.user.tag}`)
     })
+
+    this.client.on('message', this.onMessage.bind(this))
+  }
+
+  private onMessage(msg: Discord.Message){
+    if(msg.content == 'ping'){
+      msg.reply('pong!')
+    }
   }
 
   public login(token: string){
