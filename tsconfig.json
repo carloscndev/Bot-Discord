@@ -7,7 +7,7 @@
         "target": "ES6",
     },
     "include": [
-        "src/**/*"
+        "src/**/*", "credentials.js"
     ],
     "exclude": [
         "node_modules",
